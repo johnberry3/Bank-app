@@ -1,0 +1,573 @@
+.login-page {
+  padding: 5rem;
+  border-radius: 3rem;
+  height: 80vh;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1rem 1rem 10rem $color-whitish-green;
+  // overflow-y: auto;
+  width: 50rem;
+  position: relative;
+  transition: transform 0.5s ease-out;
+}
+a {
+  text-decoration: none;
+}
+
+.textt {
+  margin-top: -1rem;
+}
+
+.variant {
+  text-align: center;
+  font-weight: 500;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.welcome-text {
+  color: $color-primary;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  font-size: 3.8rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+}
+
+.input-field {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: $color-primary;
+  border: 1px solid $color-primary-dark;
+  border-radius: 5px;
+
+  &:active,
+  &:focus {
+    outline: 1px solid $color-primary-dark;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-primary-dark;
+  }
+}
+
+.login-icon {
+  fill: $color-primary-dark;
+  margin-left: 1rem;
+}
+
+.login-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-button {
+  cursor: pointer;
+  width: 87%;
+  font-size: 1.8rem;
+  text-align: center;
+  font-family: inherit;
+  margin: 2rem 0 0;
+  color: $color-primary-dark;
+  background-color: $color-secondary;
+  border-radius: 0.5rem;
+  border: 1px solid grey;
+  box-shadow: 0.1rem 0.1rem 20rem #729787af;
+  transition: transform 0.5s ease-out;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.error-message-container {
+  background-color: rgba(223, 15, 15, 0.904);
+  padding: 0 3rem;
+  text-align: center;
+  color: white;
+  position: absolute;
+  width: 80%;
+  animation: moveInBottom 0.5s ease-in;
+}
+
+.login-2 {
+  cursor: pointer;
+  margin: 2rem 0 0;
+  padding-right: 1rem;
+  background-color: $color-secondary;
+  border-radius: 0.5rem;
+  border: 1px solid grey;
+  box-shadow: 0.1rem 0.1rem 20rem #729787af;
+  transition: transform 0.5s ease-out;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.login-cta {
+  &__container {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+  }
+
+  &__options {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover {
+      text-decoration: underline;
+      transform: scale(1.07);
+    }
+  }
+}
+
+.login__link {
+  color: rgb(36, 35, 35);
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  font-weight: normal;
+  text-decoration: underline;
+  text-decoration-color: $color-secondary-dark;
+}
+
+.login--footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all 0.1s;
+  line-height: 1;
+
+  & > p {
+    margin: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+
+    &:hover {
+      text-decoration: underline;
+      transform: scale(1.03);
+    }
+  }
+}
+
+.privacy {
+  color: rgb(59, 59, 59);
+  text-decoration: underline;
+  letter-spacing: 0.1rem;
+  text-decoration-color: $color-secondary-dark;
+  margin-top: -2rem;
+}
+
+.container {
+  transition: all 1s;
+  width: 50rem;
+  height: 100vh;
+  position: relative;
+}
+
+.location-icon {
+  border-radius: 50%;
+  padding: 0.24rem;
+  fill: white;
+  background-color: $color-primary;
+}
+
+body {
+  transition: all 0.2s ease-in;
+  position: relative;
+}
+
+.main {
+  animation: moveInRight 0.5s ease-in;
+  backface-visibility: hidden;
+  height: 100vh;
+}
+
+.index-container,
+.deposit-container {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.dashboard-container,
+.deposit-content {
+  transition: all 1s;
+  width: 50rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.nav {
+  background-color: $color-primary;
+  padding: 1rem 5rem 5rem 3rem;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+  animation: moveInLeft 0.5s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1500;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    padding: 1rem 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    padding-left: 1rem;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid $color-whitish-green;
+
+    &:hover,
+    &:active {
+      box-shadow: 0 0.01rem 2rem rgba($color-black, 0.4);
+      transform: scale(1.03);
+    }
+  }
+
+  &__icon {
+    fill: white;
+    margin-right: 1rem;
+  }
+}
+
+.close-container {
+  text-align: right;
+  transition: transform 1s;
+}
+
+.close {
+  fill: white;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #72978762;
+  backdrop-filter: blur(3px);
+  z-index: 1200;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.home-page {
+  border: 1px solid $color-whitish-green;
+  padding: 1rem 2rem 0;
+  border-radius: 2rem;
+  height: 95vh;
+  width: 100%;
+  overflow-x: hidden;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(207, 206, 206, 0.349);
+    // border-bottom: 1px solid $color-whitish-green;
+    margin: 0 -3rem;
+    padding: 0 4rem;
+
+    &--icon {
+      fill: $color-primary-dark;
+    }
+  }
+}
+
+.actionbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    display: grid;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid $color-whitish-green;
+    border-bottom: 1px solid $color-whitish-green;
+    gap: 1.2rem;
+  }
+
+  &__icon {
+    fill: $color-secondary;
+    border-radius: 50%;
+    border: 1.5px solid $color-primary-dark;
+    padding: 0.5rem;
+  }
+
+  &__text {
+    margin-top: -0.5rem;
+    color: rgb(49, 48, 48);
+  }
+}
+
+.transfer__link {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active-header {
+  color: $color-primary;
+}
+
+.display-greetings-bar {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0 1rem 1rem;
+  line-height: 1.2;
+}
+
+.greetings {
+  font-size: 2.2rem;
+}
+
+.card-component {
+  background-color: $color-primary;
+  width: 90%;
+  font-size: 1.8rem;
+  padding: 0 2rem 0;
+  border-radius: 2rem;
+  color: #fff;
+  margin: 0 auto 2rem;
+  height: fit-content;
+  position: relative;
+  line-height: 2rem;
+}
+
+.bank-name {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.bank-logo {
+  margin-left: -2.5rem;
+}
+
+.chip {
+  margin-top: -1rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.card-number {
+  width: 90%;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-name {
+  text-transform: uppercase;
+}
+
+.card-bank-logo {
+  transform: skewY(-7deg);
+}
+
+.card-logo {
+  width: 15rem;
+  height: 10rem;
+  margin-bottom: -1rem;
+  margin-right: -3rem;
+}
+
+.card-account-balance {
+  position: absolute;
+  right: 3rem;
+  top: 20%;
+  font-size: 2rem;
+}
+
+.statistics__content {
+  display: flex;
+  justify-content: center;
+}
+
+// Styles for the incomplete page
+.incomplete__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-page {
+  color: $color-primary-dark;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .login-page {
+    padding: 1rem;
+    border-radius: 0;
+    height: 100vh;
+    margin-top: 1rem;
+    line-height: 3;
+    box-shadow: none;
+  }
+
+  .error-message-container {
+    width: 100%;
+    height: 5rem;
+  }
+
+  .top-nav__item {
+    line-height: 3;
+  }
+
+  .card-component {
+    height: auto;
+    margin: 0 auto 2rem;
+  }
+
+  .welcome-text {
+    color: $color-primary;
+    letter-spacing: 0.1rem;
+    font-size: 4rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .login {
+    margin: 2rem 0;
+  }
+  .login-button {
+    width: 87%;
+  }
+
+  .login--footer {
+    margin: 2rem 0 0;
+  }
+
+  .location-icon {
+    border-radius: 50%;
+    padding: 0.24rem;
+    fill: white;
+    background-color: $color-primary;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .dashboard-container {
+    transition: all 1s;
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav {
+    width: 80%;
+  }
+
+  .home-page {
+    border: none;
+    height: 100vh;
+    padding: 0 0 0 1rem;
+    border-radius: 0;
+
+    &__nav {
+      margin: 0 0 2rem;
+      padding: 1rem 1rem 0 0;
+
+      &--icon {
+        fill: $color-primary-dark;
+      }
+    }
+  }
+
+  .actionbar {
+    margin: 0;
+
+    &__container {
+      row-gap: 1rem;
+      margin: 1rem 0 2rem;
+    }
+
+    &__icon {
+      fill: $color-secondary;
+      border-radius: 50%;
+      border: 1.5px solid $color-primary-dark;
+      padding: 0.5rem;
+    }
+
+    &__text {
+      margin-top: -0.5rem;
+    }
+  }
+
+  .display-greetings-bar {
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  .greetings {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 23.5em) {
+  .welcome-text {
+    font-size: 3.5rem;
+    // line-height: 1;
+  }
+
+  .card-number {
+    letter-spacing: 0.3rem;
+  }
+}
